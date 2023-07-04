@@ -4,14 +4,51 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
 </head>
+<style>
+body{background-color: rgb(0, 255, 13);}
+</style>
 <body>
-<h1>Hello World.. this is my first website.... Hooray!!</h1>
+<h1><marquee>Other links to other areas</marquee></h1>
 <p>Here are all my pages</p>
 <ul>
   <li>
-  <a href="linkedfile.html">First linked page </a>
+  <a href="endangered_species.html">Endangered species project</a>
   </li>
 </ul>
+<script>
+function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+// position of the ball
+var x = 20;
+// how far the ball moves every time
+var speed = 5;
+//second ball position
+var y = 20
+//second ball speed
+var speed2 = 5
+draw = function() {
+    background(202, 255, 97);
+    
+    fill(66, 66, 66);
+    ellipse(x, 200, 50, 50);
+    ellipse(200, y, 50, 50);
+    if (x > 375) {
+        speed = -5;
+    }
+    if (x < 25) {
+        speed = 5;
+    }
+	if(y<0){speed2=5;};
+	if(y>400){speed2=-5};
+    // move the ball
+    x = x + speed;
+	y = y + speed2
+};
+}
+</script>
 </body>
 </html>
