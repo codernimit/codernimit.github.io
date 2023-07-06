@@ -5,8 +5,12 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+<style>
+body {background-color: rgb(202, 255, 97);}
+</style>
 </head>
 <body>
+<p><a href="index.html">Click here</a> if you want to go to the main page<p>
 <script>
 function setup() {
   createCanvas(1250, 580);
@@ -17,21 +21,51 @@ var x = 625;
 // how far the ball moves every time
 var speed = 5;
 //second ball position
-var y = 290
+var y = 290;
 //second ball speed
-var speed2 = 5
+var speed2 = 5;
+//3rd ball position
+var xy = 60;
+//3rd ball speed
+var speed3 = 5;
 draw = function() {
     background(202, 255, 97);
     fill(66, 66, 66);
+	ellipse(x, 0, 50, 50);
+	ellipse(x, 100, 50, 50);
     ellipse(x, 200, 50, 50);
-    ellipse(200, y, 50, 50);
+	ellipse(x, 300, 50, 50);
+	ellipse(x, 400, 50, 50);
+	ellipse(x, 500, 50, 50);
+	ellipse(x, 600, 50, 50);
+	ellipse(xy, xy, 50, 50);
+	ellipse(0, y, 50, 50);
+	ellipse(100, y, 50, 50);
+	ellipse(200, y, 50, 50);
+	ellipse(300, y, 50, 50);
+	ellipse(400, y, 50, 50);
+	ellipse(500, y, 50, 50);
+	ellipse(600, y, 50, 50);
+	ellipse(700, y, 50, 50);
+	ellipse(800, y, 50, 50);
+	ellipse(900, y, 50, 50);
+	ellipse(1000, y, 50, 50);
+	ellipse(1100, y, 50, 50);
+	ellipse(1200, y, 50, 50);
+	ellipse(1300, y, 50, 50);
+	//first ifs
     if (x > 1225) {speed = -5;}
     if (x < 25) {speed = 5;}
-	if(y<25){speed2=5;};
-	if(y>555){speed2=-5};
+	//second ifs
+	if(y<5){speed2=5;}
+	if(y>555){speed2=-5;}
+	//third ifs
+	if(xy>570){speed3=-5;}
+	if(60>xy){speed3=5;}
     // move the ball
     x = x + speed;
-	y = y + speed2
+	y = y + speed3;
+	xy=xy+speed3;
 };
 }
 </script>
