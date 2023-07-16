@@ -1,0 +1,43 @@
+<!DOCTYPE html/>
+<html>
+<head>
+<title>randomizer</title>
+<style>
+body {background-color: green}
+</style>
+</head>
+<body>
+<p> There are 5 passwords(fruits) that will be randomly generated.<br/>W@terMelon, @ppLe, B@N@Na, Or@nges, and m@ngo (each of them has to spell exactly as they are written)<br/>try to guess the correct password!</p>
+<input id="passwordBox" type="password"/>
+<input type=button value="click me" onclick="checkPassword()"/>
+<script>
+function checkPassword(){
+var passwords = Math.floor(Math.random()*5)
+var password = document.getElementById("passwordBox");
+var passwordText = password.value;
+if(passwords == 1){
+passwords = "W@terMelon";
+}
+else if(passwords == 2){
+passwords = "B@N@Na";
+}
+else if(passwords == 3){
+passwords = "@ppLe";
+}
+else if (passwords == 4){
+passwords = "Or@nges"
+}
+else{
+passwords = "m@ngo"
+}
+if(passwordText == passwords){
+alert("you guessed the correct password!")
+}
+else{alert("try again!");
+alert("the answer was "+passwords);
+}
+}
+</script>
+<p><a href="index.html">click here<a> if you want to go to my main page.</p>
+</body>
+</html>
