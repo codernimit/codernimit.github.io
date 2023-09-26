@@ -1,0 +1,45 @@
+<!DOCTYPE html/>
+<html>
+<head>
+<title>To-Do List</title>
+<script>
+function addItem(){
+var newItem = document.createElement("div");
+newItem.innerHTML = document.getElementById("box").value;
+newItem.onclick = removeItem;
+document.getElementById("list").appendChild(newItem);
+saveList();
+}
+function removeItem(){
+document.getElementById("list").removeChild(this);
+saveList();
+}
+function saveList(){
+localStorage.storedList = document.getElementById("list").innerHTML;
+}
+function loadList(){
+document.getElementById("list").innerHTML = localStorage.storedList;
+for(var i=0; i <list.children.length; i++){
+list.children[i].onclick = removeItem;
+}
+}
+</script>
+<style>
+body {background-color: blue}
+h1 {color: red}
+p {background-color: red}
+p {text-align: right}
+</style>
+</head>
+<body>
+<h1>To-Do list</h1>
+<br/>
+<input type="text" id="box"value="Type here to add task"/><br/>
+<input type="button" value="add Item" onclick="addItem();"/><br/>
+<div id="list"></div>
+<script>
+if(localStorage.storedList){loadList();}
+</script>
+<p><a href="index.html">Click here</a> if you want to go to my main page</p>
+</body>
+</html>
